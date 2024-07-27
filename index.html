@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <div class="required">
+            <h1>Registration Form</h1>
+            <div class="name">
+                <label>Enter your name: <input type="text" name="Name" placeholder="Enter your Name"  required></label>
+            </div>
+            <div class="email">
+                <label>Enter your email: <input type="text" name="Name" placeholder="Enter your email"  required></label>
+            </div>
+            <div class="conpas">
+                <label> contact number <input type="text" name="Name" placeholder="Enter your contact number"  required></label>
+                <label>Password <input type="text" name="Name" placeholder="Enter your password"  required></label>
+            </div>
+        </div>
+        <div class="gender-selection">
+            <h3>Gender</h3>
+            <div class="gender">
+                <input type="radio" id="check-male" name="gender" />
+                <label for="check-male">Male</label>
+            </div>
+            <div class="gender">
+                <input type="radio" id="check-female" name="gender" />
+                <label for="check-female">Female</label>
+            </div>
+            <div class="gender">
+                <input type="radio" name="gender">
+                <label for="check-male">Other</label>
+            </div>
+            
+        </div>
+
+        <div class="select">
+            <select>
+                <option>India</option>
+                <option>America</option>
+                <option>Canada</option>
+                <option>Japan</option>
+                <option>England</option>
+                <option>Sri-Lanka</option>
+                <option>France</option>
+            </select>
+        </div>
+        
+       
+            <button class="btn" onclick="fill()">Submit</button>
+        
+        <div id="results"></div>
+        
+    </div>
+
+
+    <script>
+        
+
+        function fill(){
+            let btn = document.getElementsByClassName('btn');
+            let results = document.getElementById('results');
+           
+            const name = document.getElementsByClassName('name').value;
+            const email = document.getElementsByClassName('email').value;
+            const conpas = document.getElementsByClassName('conpas').value;
+
+            if(name === '' || email === '' || conpas === ''){
+                alert("please fill in the required form!");
+            }
+            else{
+                results.innerHTML = "welcome";
+                console.log(results);
+            }
+        }
+    </script>
+</body>
+</html>
