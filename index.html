@@ -11,13 +11,13 @@
         <div class="required">
             <h1>Registration Form</h1>
             <div class="name">
-                <label>Enter your name: <input type="text" name="Name" placeholder="Enter your Name"  required></label>
+                <label>Enter your name: <input id="name" type="text" name="Name" placeholder="Enter your Name"  required></label>
             </div>
             <div class="email">
-                <label>Enter your email: <input type="text" name="Name" placeholder="Enter your email"  required></label>
+                <label>Enter your email: <input id="email" type="text" name="Name" placeholder="Enter your email"  required></label>
             </div>
             <div class="conpas">
-                <label> contact number <input type="text" name="Name" placeholder="Enter your contact number"  required></label>
+                <label> contact number <input id="conpas" type="text" name="Name" placeholder="Enter your contact number"  required></label>
                 <label>Password <input type="text" name="Name" placeholder="Enter your password"  required></label>
             </div>
         </div>
@@ -65,15 +65,16 @@
             let btn = document.getElementsByClassName('btn');
             let results = document.getElementById('results');
            
-            const name = document.getElementsByClassName('name').value;
-            const email = document.getElementsByClassName('email').value;
-            const conpas = document.getElementsByClassName('conpas').value;
+            const name = document.getElementById('name').value;
+            const email = document.getElementById('email').value;
+            const conpas = document.getElementById('conpas').value;
 
             if(name === '' || email === '' || conpas === ''){
-                alert("please fill in the required form!");
+                alert("please fill required form!");
+                results.innerHTML = " ";
             }
             else{
-                results.innerHTML = "welcome";
+                results.innerHTML = `welcome  ${name}`;
                 console.log(results);
             }
         }
